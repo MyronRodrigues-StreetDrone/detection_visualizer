@@ -6,7 +6,9 @@ The output topic can be visualized in rviz.
 
 ![Example image with bounding boxes created using darknet and the yolov3-tiny network](doc/example_darknet_yolov3-tiny.png)
 
-# Topics
+## Visualiser 2D
+
+### Topics
 
 * `~/images` (Type `sensor_msgs/msg/Image`) - Input topic with images that have been given to a computer vision node
 * `~/detections` (Type `vision_msgs/msg/Detection2DArray`) - Input topic with detections on the given image
@@ -14,3 +16,12 @@ The output topic can be visualized in rviz.
 
 It is assumed the image message and detections message have identical timestamps.
 
+## Visualiser 3D
+
+### Subscriptions
+
+* `/detections` **`vision_msgs::msg::Detection3DArray`** - Reads 3D detections.
+  
+### Publishes
+
+* `/detections_vis` **`visualisation_msgs::msg::MarkerArray`** - Cube markers of 3D detections
